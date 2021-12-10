@@ -478,7 +478,7 @@ namespace JT1078.Protocol.Audio
             }
         }
 
-        private const string DLLFile = @"libfaac.so.0";
+        private const string DLLFile = @"\nativelibs\unix\libfaac.so";
 
         [DllImport(DLLFile, EntryPoint = "faacEncGetVersion", CallingConvention = CallingConvention.StdCall)]
         private static extern int FaacEncGetVersion(ref IntPtr faac_id_string, ref IntPtr faac_copyright_string);
