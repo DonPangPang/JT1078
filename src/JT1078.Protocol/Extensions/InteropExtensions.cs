@@ -89,5 +89,37 @@ namespace JT1078.Protocol.Extensions
             }
             return buffer2;
         }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="input"> </param>
+        /// <returns> </returns>
+        public static IntPtr ToIntPtr(this byte[] input)
+        {
+            int size = input.Length;
+            if (size == 0) return IntPtr.Zero;
+
+            IntPtr buffer = Marshal.AllocHGlobal(size);
+            try
+            {
+                Marshal.Copy(input, 0, buffer, size);
+
+                return buffer;
+            }
+            catch
+            {
+                Marshal.FreeHGlobal(buffer);
+            }
+
+            return IntPtr.Zero;
+        }
+
+        public static byte[] ToBytes(this IntPtr buffer, int bufferSize)
+        {
+            byte[] res = new byte[bufferSize];
+            Marshal.Copy(buffer, res, 0, bufferSize);
+
+            return res;
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace JT1078.Flv.Test.Audio
             if (File.Exists(path)) File.Delete(path);
             output.WriteLine(path);
             var offset = 0;
-            var step = faac.frameSize;
+            var step = faac.frameSize / 2;
             var totalBytes = 0;
             var stopwatch = new Stopwatch();
             while (offset + step < fileData.Length)

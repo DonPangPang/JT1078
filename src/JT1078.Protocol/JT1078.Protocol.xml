@@ -67,6 +67,12 @@
             <param name="separator"></param>
             <returns></returns>
         </member>
+        <member name="M:JT1078.Protocol.Extensions.InteropExtensions.ToIntPtr(System.Byte[])">
+            <summary>
+            </summary>
+            <param name="input"> </param>
+            <returns> </returns>
+        </member>
         <member name="T:JT1078.Protocol.JT1078PackageExtensions">
             <summary>
             1078扩展类
